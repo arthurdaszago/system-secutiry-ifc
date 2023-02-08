@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  assetPrefix: 'https://github.com/arthurdaszago/system-secutiry-ifc.git',
+  assetPrefix: 'system-secutiry-ifc',
   images: {
     unoptimized: true,
   },
