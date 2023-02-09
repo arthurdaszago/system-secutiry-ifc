@@ -1,10 +1,31 @@
 import { useEffect, useState } from "react";
 import { Menu as MenuIcon } from '@mui/icons-material';
-import { AppBar, Box, Button, Container, Divider, Drawer, IconButton, List, ListItem, ListItemButton, ListItemText, Toolbar, Typography } from "@mui/material";
+import { AppBar, Box, Button, Container, Divider, Drawer, IconButton, Link, List, ListItem, ListItemButton, ListItemText, Toolbar, Typography } from "@mui/material";
+import { PATH } from "@/routes/routes";
 
+
+type Item = {
+    label: string;
+    href: string;
+    children?: Item[]
+}
+
+type NavItems = Array<Item>
 
 const drawerWidth = 240;
-const navItems = ['Conceitos gerais', 'Segurança de dados', 'Segurança de perímetro', 'Segurança de software', 'Segurança de nuvem'];
+
+const navItems: NavItems = [
+    { label: 'Conceitos gerais', href: PATH.root },
+    {
+        label: 'Segurança', href: PATH.security.root, children: [
+            { label: 'Dados', href: PATH.security.dados },
+            { label: 'Perímetro', href: PATH.security.perimetro },
+            { label: 'Software', href: PATH.security.software },
+            { label: 'Nuvem', href: PATH.security.nuvem },
+        ]
+    },
+    { label: 'Podcasts', href: '' }
+];
 
 
 export default function Menu() {
@@ -23,12 +44,14 @@ export default function Menu() {
             </Typography>
             <Divider />
             <List>
-                {navItems.map((item) => (
-                    <ListItem key={item} disablePadding>
-                        <ListItemButton sx={{ textAlign: 'center' }}>
-                            <ListItemText primary={item} />
-                        </ListItemButton>
-                    </ListItem>
+                {navItems.map(({ label, href }) => (
+                    <Link href={href}>
+                        <ListItem key={label} disablePadding>
+                            <ListItemButton sx={{ textAlign: 'center' }}>
+                                <ListItemText primary={label} />
+                            </ListItemButton>
+                        </ListItem>
+                    </Link>
                 ))}
             </List>
         </Box>
@@ -64,10 +87,12 @@ export default function Menu() {
                             MUI
                         </Typography>
                         <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-                            {navItems.map((item) => (
-                                <Button key={item} sx={{ color: '#fff' }}>
-                                    {item}
-                                </Button>
+                            {navItems.map(({ label, href }) => (
+                                <Link href={href}>
+                                    <Button key={label} sx={{ color: '#fff' }}>
+                                        {label}
+                                    </Button>
+                                </Link>
                             ))}
                         </Box>
                     </Toolbar>
