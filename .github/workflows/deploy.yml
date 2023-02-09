@@ -5,7 +5,8 @@ on:
     branches: ["main"]
 
 env:
-  NODE_AUTH_TOKEN: ${{ secrets.PAGES_DEPLOYMENT }}
+  NODE_AUTH_TOKEN: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+  # NODE_AUTH_TOKEN: ${{ secrets.PAGES_DEPLOYMENT }}
 
 permissions:
   contents: read
