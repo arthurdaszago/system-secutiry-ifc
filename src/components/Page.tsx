@@ -13,7 +13,7 @@ const Page = forwardRef<HTMLDivElement, Props>(({ children, title = '', meta, ..
     return (
         <>
             <Head>
-                <title>{title}</title>
+                <title>{`${title} | System security`}</title>
                 {meta}
             </Head>
 
