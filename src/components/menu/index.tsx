@@ -45,8 +45,8 @@ export default function Menu() {
             <Divider />
             <List>
                 {navItems.map(({ label, href }) => (
-                    <Link href={href}>
-                        <ListItem key={label} disablePadding>
+                    <Link key={label} href={href}>
+                        <ListItem disablePadding>
                             <ListItemButton sx={{ textAlign: 'center' }}>
                                 <ListItemText primary={label} />
                             </ListItemButton>
@@ -88,8 +88,8 @@ export default function Menu() {
                         </Typography>
                         <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                             {navItems.map(({ label, href }) => (
-                                <Link href={href}>
-                                    <Button key={label} sx={{ color: '#fff' }}>
+                                <Link key={label} href={href}>
+                                    <Button sx={{ color: '#fff' }}>
                                         {label}
                                     </Button>
                                 </Link>
