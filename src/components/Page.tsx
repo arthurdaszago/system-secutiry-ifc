@@ -1,5 +1,5 @@
 import { Box, BoxProps } from "@mui/material";
-import { Head, Main } from "next/document";
+import Head from "next/head";
 import { forwardRef, ReactNode } from "react";
 
 interface Props extends BoxProps {
@@ -8,7 +8,7 @@ interface Props extends BoxProps {
     title: string;
 }
 
-
+// eslint-disable react/display-name
 const Page = forwardRef<HTMLDivElement, Props>(({ children, title = '', meta, ...other }, ref) => {
     return (
         <>

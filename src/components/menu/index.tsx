@@ -40,7 +40,7 @@ export default function Menu() {
             return
         }
         setContainer(undefined)
-    })
+    }, [])
 
     return (
         <>
