@@ -3,11 +3,6 @@ import { Breadcrumbs, Card, Container, Link, Stack, Typography } from "@mui/mate
 import { NavigateNext as NavigateNextIcon } from '@mui/icons-material'
 import { PATH } from "@/routes/routes";
 
-
-function handleClick(event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
-    event.preventDefault();
-}
-
 export default function Index() {
 
     return (
@@ -19,7 +14,7 @@ export default function Index() {
                         separator={<NavigateNextIcon fontSize="small" />}
                         aria-label="breadcrumb"
                     >
-                        <Link underline="hover" key="1" color="inherit" href={PATH.root} onClick={handleClick}>
+                        <Link underline="hover" key="1" color="inherit" href={PATH.root}>
                             Conceitos gerais
                         </Link>
                         <Typography key="3" color="text.primary">
