@@ -32,6 +32,7 @@ const navItems: NavItems = [
   { label: "Conceitos gerais", href: PATH.root },
   { label: "Segurança", href: PATH.security.root },
   { label: "Podcasts", href: PATH.podcasts.root },
+  
 ];
 
 export default function Menu() {
