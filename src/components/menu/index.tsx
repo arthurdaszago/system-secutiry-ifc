@@ -30,7 +30,8 @@ const drawerWidth = 240;
 
 const navItems: NavItems = [
   { label: "Conceitos gerais", href: PATH.root },
-  { label: "Segurança", href: PATH.security.root },
+  { label: "Ataques cibernéticos", href: PATH.ataques_ciberneticos.root },
+  // { label: "Segurança", href: PATH.security.root },
   { label: "Podcasts", href: PATH.podcasts.root },
   
 ];
@@ -91,7 +92,7 @@ export default function Menu() {
               component="div"
               sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
             >
-              MUI
+              Segurança de sistemas
             </Typography>
             <Box sx={{ display: { xs: "none", sm: "block" } }}>
               {navItems.map(({ label, href }) => (
