@@ -25,6 +25,8 @@ export default function Index() {
                     <Card sx={{ p: 5, borderRadius: 10, textAlign: 'justify' }}>
                         <Typography variant="h4" gutterBottom>Ataques cibernéticos</Typography>
 
+                        <Typography variant="body1" gutterBottom>Refere a ações maliciosas projetadas por adversários para comprometer ativos por meio de agentes (tipos de malwares) para obter vantagens </Typography>
+
                         <Stack>
                             <Typography variant="h5" gutterBottom>Zero day exploit</Typography>
 
