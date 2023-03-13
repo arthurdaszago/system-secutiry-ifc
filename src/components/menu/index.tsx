@@ -30,7 +30,7 @@ const drawerWidth = 240;
 
 const navItems: NavItems = [
   { label: "Conceitos gerais", href: PATH.root },
-  { label: "Ataques cibernéticos", href: PATH.ataques_ciberneticos.root },
+  { label: "Ataques cibernéticos e playbooks", href: PATH.ataques_ciberneticos.root },
   // { label: "Segurança", href: PATH.security.root },
   { label: "Podcasts", href: PATH.podcasts.root },
   

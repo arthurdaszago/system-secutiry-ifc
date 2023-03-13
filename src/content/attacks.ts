@@ -9,8 +9,6 @@ export type Attack = {
   playbook: Playbook[];
 };
 
-const attackContent = {};
-
 const playbooks = {
   keylogger: [
     {
