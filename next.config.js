@@ -1,7 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
 
-  assetPrefix: ".",
+  basePath: "/system-security-ifc",
+  assetPrefix: "/system-security-ifc",
   // trailingSlash: true,
 
   images: {
