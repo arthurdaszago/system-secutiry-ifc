@@ -29,11 +29,14 @@ type NavItems = Array<Item>;
 const drawerWidth = 240;
 
 const navItems: NavItems = [
-  { label: "Conceitos gerais", href: PATH.root },
-  { label: "Ataques cibernéticos e playbooks", href: PATH.ataques_ciberneticos.root },
-  // { label: "Segurança", href: PATH.security.root },
+  { label: "Conceitos gerais", href: PATH.concepts },
+  {
+    label: "Ataques cibernéticos e playbooks",
+    href: PATH.ataques_ciberneticos.root,
+  },
   { label: "Podcasts", href: PATH.podcasts.root },
-  
+  { label: "Segurança mobile", href: PATH.security.root },
+  { label: "Firewall", href: PATH.firewall },
 ];
 
 export default function Menu() {
@@ -47,9 +50,11 @@ export default function Menu() {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
-        Segurança de sistemas
-      </Typography>
+      <Link href={PATH.root}>
+        <Typography variant="h6" sx={{ my: 2 }}>
+          Segurança de sistemas
+        </Typography>
+      </Link>
       <Divider />
       <List>
         {navItems.map(({ label, href }) => (
@@ -77,30 +82,30 @@ export default function Menu() {
     <>
       <AppBar component="nav">
         <Container maxWidth="xl">
-          <Toolbar>
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              edge="start"
-              onClick={handleDrawerToggle}
-              sx={{ mr: 2, display: { sm: "none" } }}
-            >
-              <MenuIcon />
-            </IconButton>
-            <Typography
-              variant="h6"
-              component="div"
-              sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
-            >
-              Segurança de sistemas
-            </Typography>
-            <Box sx={{ display: { xs: "none", sm: "block" } }}>
+          <Toolbar sx={{ justifyContent: "space-between" }}>
+            <Box>
+              <IconButton
+                color="inherit"
+                aria-label="open drawer"
+                edge="start"
+                onClick={handleDrawerToggle}
+                sx={{ mr: 2, display: { sm: "none" } }}
+              >
+                <MenuIcon />
+              </IconButton>
+
+              <Link href={PATH.root} color="secondary">
+                <Button sx={{ color: "#fff" }}>Segurança de sistemas</Button>
+              </Link>
+            </Box>
+
+            {/* <Box sx={{ display: { xs: "none", sm: "block" } }}>
               {navItems.map(({ label, href }) => (
                 <Link key={label} href={href}>
                   <Button sx={{ color: "#fff" }}>{label}</Button>
                 </Link>
               ))}
-            </Box>
+            </Box> */}
           </Toolbar>
         </Container>
       </AppBar>
@@ -115,7 +120,6 @@ export default function Menu() {
             keepMounted: true, // Better open performance on mobile.
           }}
           sx={{
-            display: { xs: "block", sm: "none" },
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
               width: drawerWidth,
