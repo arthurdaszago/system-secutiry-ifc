@@ -17,7 +17,6 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={theme}>
       <Menu />
-
       <Box component="main">
         <Container maxWidth="xl">
           <Component {...pageProps} />
